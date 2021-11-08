@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style2.css">
+    <title>Countdown 2021</title>
+
+</head>
+<body >
+
+
+<div class="box1">
+    <h2 id="days1"></h2>
+    <h4>DAYS</h4>
+</div>
+<div class="box1">
+    <h2 id="hours1"></h2>
+    <h4>HOURS</h4>
+</div>
+<div class="box1">
+    <h2 id="minutes1"></h2>
+    <h4>MINUTES</h4>
+</div>
+<div class="box1">
+    <h2 id="seconds1"></h2>
+    <h4>SECONDS</h4>
+</div>
+
+<script>
+    
+
+    var count = new Date("jan 1, 2022 00:00:00").getTime();
+         var x = setInterval(function(){
+    var now = new Date().getTime();
+    var d = count - now;
+    
+    var days = Math.floor(d/(1000*60*60*24));
+    var hours = Math.floor((d%(1000*60*60*24)) / (1000*60*60));
+    var minutes = Math.floor((d%(1000*60*60)) / (1000*60));
+    var seconds = Math.floor((d%(1000*60)) / 1000);
+
+    document.getElementById("days1").innerHTML = days;
+    document.getElementById("hours1").innerHTML = hours;
+    document.getElementById("minutes1").innerHTML = minutes;
+    document.getElementById("seconds1").innerHTML = seconds;
+
+          }, 1000)
+   
+      
+</script>
+</body>
+</html>
